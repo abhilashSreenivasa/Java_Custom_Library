@@ -1,4 +1,7 @@
 package com.custom;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Pattern;
 
 public class Str {
@@ -64,7 +67,55 @@ public class Str {
         return p.matcher(s).find();
     }
 
+    //Splits the string at line breaks and returns a list
+    public static List<String> splitLines(String s){
+        String[] str=s.split("\n");
+        List<String> list=new ArrayList<String>();
+        for(int i=0;i<str.length;i++)
+        list.add(str[i]);
+        return list; 
+    }
     
+    
+    // Repeats the string in a new line on given count
+    public static String repeat(String s,int count){
+        String str="";
+        for(int i=0;i<count;i++)
+        str+=s+"\n";
+        return str;
+    }
+    
+    
+    //Changes upper Character to lower and vice versa.
+    public static String changeCase(String s){
+        String changed="";
+        for(int i=0;i<s.length();i++){
+            if(Character.isAlphabetic(s.charAt(i))){
+                if(Character.isLowerCase(s.charAt(i)))
+                changed+=String.valueOf(Character.toUpperCase(s.charAt(i)));
+                else
+                changed+=String.valueOf(Character.toLowerCase(s.charAt(i)));
+            }
+            else
+            changed+=String.valueOf(s.charAt(i));
+
+        }
+        return changed;
+    }
+
+
+    //Find middle of the String
+    public static Character middileChar(String s){
+        if(s.length()>2){
+        int mid=s.length()/2;
+        return s.charAt(mid);
+        }
+        else
+        return s.charAt(0);
+        
+    }
+
+
 
 
 
