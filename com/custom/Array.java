@@ -45,9 +45,45 @@ public class Array{
         return true;
     }
 
+    //Searches a given number in an array and returns position.Return -1 if not found
+    //O(n) time complexity
 
+    public static int linearSearch(int[] a, int ele){
+        for(int i=0;i<a.length;i++){
+            if(a[i]==ele)
+            return i;
+        }
+        return -1;
+    }
 
+   // Searches a given number in an array and returns position.Return -1 if not found
+   //log(n) time complexity
+   //Note: For Binary Search array should be sorted first
 
+    public static int binarySearch(int[] a,int ele){
+        if(a.length==0)
+        return -1;
+        Array.bubbleSort(a);
+        int high=a.length-1;
+        int low=0;
+        int mid=0;
+        while(low<high){
+            mid=low+(high-low)/2; // Avoiding overflow of int.
+
+            if(a[mid]==ele)
+            return mid;
+
+            if(a[mid]<ele)
+            low=mid+1;
+
+            if(a[mid]>ele)
+            high=mid-1;
+
+        }
+        return -1;
+        
+    }
+   
     //Sort method with a time-complexity of o(n^2)
     public static int[] bubbleSort(int[] a){
         int flag=0;int temp=0;
