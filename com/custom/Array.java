@@ -1,6 +1,10 @@
 package com.custom;
 
-public class Array{
+// Class is made final in order to stop user of the class to extend another class from this class.
+public final class Array{
+    private Array(){
+        //Constructor is made private in order to stop user from creating an object from this class.
+    }
 
     //Get the largest element in the array.
     public static int getBig(int[] a){
@@ -99,6 +103,27 @@ public class Array{
         }
     }
     return a;
+    }
+
+    public static int[] selectionSort(int[] a){
+        int j=0, min=a[0], temp=0;
+        if(a.length<=1)
+        return a;
+
+        for(int i=0;i<a.length-1;i++){
+            min=i;
+            j=i+1;
+            while(j!=a.length){
+                if(a[min]>a[j])
+                min=j;
+                ++j;
+            }
+            temp=a[min];
+            a[min]=a[i];
+            a[i]=temp;
+
+        }
+        return a;
     }
 
 

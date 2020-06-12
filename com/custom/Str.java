@@ -4,7 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public class Str {
+// Class is made final in order to stop user of the class to extend another class from this class.
+public final class Str {
+
+    private Str(){
+        //Constructor is made private in order to stop user from creating an object from this class.
+    }
 
     // Converts first letter of the String to uppercase.
     public static String capitalize(String s){
@@ -105,7 +110,7 @@ public class Str {
 
 
     //Find middle of the String
-    public static Character middileChar(String s){
+    public static Character middleChar(String s){
         if(s.length()>2){
         int mid=s.length()/2;
         return s.charAt(mid);
