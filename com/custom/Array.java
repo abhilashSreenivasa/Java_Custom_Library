@@ -104,7 +104,8 @@ public final class Array{
     }
     return a;
     }
-
+ 
+    //Selection Sort: TIme complexity:o(n^2)
     public static int[] selectionSort(int[] a){
         int j=0, min=a[0], temp=0;
         if(a.length<=1)
@@ -126,6 +127,34 @@ public final class Array{
         return a;
     }
 
+    //checks if two arrays are equal.
+    public static Boolean isEqual(int[] a,int[] b){
+       if(a.length!=b.length)
+       return false;
+      if(b.length!=0){
+        for(int i=0;i<a.length;i++){
+            if(a[i]!=b[i])
+            return false;
+        }
+    }
+        return true;
+    }
 
+    //Insertion sort: Time complexity:o(n^2)
+    public static int[] insertionSort(int[] a){
+        if(a.length<=1)
+        return a;
+        for(int i=1;i<a.length;i++){
+            int key=a[i];
+            int temp=i-1;
+            while(temp>=0 && key<=a[temp]){
+                a[temp+1]=a[temp];
+                temp--;
+            }
+            a[temp+1]=key;
+        }
+        return a;
+
+    }
 
 }

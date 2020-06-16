@@ -120,6 +120,18 @@ public final class Str {
         
     }
 
+    //Reverse a String
+    public static String reverse(String s){
+        if(s.length()<=1)
+        return s;
+        StringBuffer sb=new StringBuffer();
+        for(int i=s.length()-1;i>=0;i--)
+        sb.append(String.valueOf(s.charAt(i)));
+        return sb.toString();
+    }
+
+    
+
 
 
 
