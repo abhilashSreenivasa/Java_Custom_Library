@@ -156,5 +156,58 @@ public final class Array{
         return a;
 
     }
+   //Merge Sort: It uses divide and concur method by using recursion(.
+   //Worst case: o(nlogn)
+    public static int[] mergeSort(int[] a){
+        split(a);
+        return a;
+
+    }
+    //Merge Sort sub method:Splits the array into it's simplest form. 
+    public static void split(int[] a){
+        if(a.length<2)
+          return;
+        int mid=a.length/2;
+        int[] left=new int[mid];
+        int[] right=new int[a.length-mid];
+
+        for(int i=0;i<=mid-1;i++)
+         left[i]=a[i];
+         for(int i=mid;i<a.length;i++)
+         right[i-mid]=a[i];
+         split(left);
+         split(right);
+         merge(left,right,a);
+    
+    }
+
+    //Merge Sort:split sub method calls this to merge the split elements
+    public static void merge(int[] left,int[] right,int[] a){
+        int nleft=left.length;
+        int nright=right.length;
+        int i=0,j=0,k=0;
+        while(i<nleft && j<nright){
+            if(left[i]<=right[j])
+            {
+                a[k]=left[i];
+                i++;k++;
+            }
+            else{
+                a[k]=right[j];
+                j++;k++;
+            }
+        }
+        while(i<nleft){
+            a[k]=left[i];
+            i++;k++;
+
+        }
+        while(j<nright){
+            a[k]=right[j];
+                j++;k++;
+        }
+
+    }
+
 
 }
