@@ -209,5 +209,39 @@ public final class Array{
 
     }
 
+    //QuickSort: Average case:theta(nlogn), worst case (o(n^2))
+    public static int[] quickSort(int[] a){
+        qSort(a,0,a.length-1);
+        return a;
+    }
+    public static void qSort(int[] a,int start,int end){
+        if(start<end){
+            int partitionIndex=partition(a,start,end);
+            qSort(a, start, partitionIndex-1);
+            qSort(a, partitionIndex+1, end);
+        }
+    }
+    public static int partition(int[] a,int start,int end){
+        int pivot=a[end];
+        int partitionIndex=start;
+
+        for(int i=start;i<end;i++){
+            if(a[i]<pivot){
+                int temp=a[partitionIndex];
+                a[partitionIndex]=a[i];
+                a[i]=temp;
+                ++partitionIndex;
+            }
+        }
+        int temp=a[partitionIndex];
+        a[partitionIndex]=a[end];
+        a[end]=temp;
+        return partitionIndex;
+
+
+    }
+
+
+
 
 }
