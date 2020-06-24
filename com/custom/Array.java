@@ -210,6 +210,7 @@ public final class Array{
     }
 
     //QuickSort: Average case:theta(nlogn), worst case (o(n^2))
+    
     public static int[] quickSort(int[] a){
         qSort(a,0,a.length-1);
         return a;
