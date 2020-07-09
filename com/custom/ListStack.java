@@ -4,7 +4,7 @@ public class ListStack{
     
     public Node top;
     public Node bottom;
-    public int size;
+    public int size=0;
     class Node{
         public int val;
         public Node next;
@@ -27,18 +27,23 @@ public class ListStack{
         }
     }
     public Object pop(){
-        if(top!= null || bottom!=null){
-       
-       Node temp;
+        if(bottom!=null || top!=null){
+       Node temp=bottom;
        int popEle=top.val;
-       temp=bottom;
-       System.out.println(temp);
-       while(temp.next!=top){
+       if(top==bottom){
+           top=null;
+           bottom=null;
+           --size;
+       }
+       else{
+       while( temp.next!=top){
            temp=temp.next;
        }
-       
+      
        temp.next=null;
+       top=temp;
        --size;
+    }
        return popEle;
     }
     else
@@ -56,6 +61,10 @@ public class ListStack{
         if(top==null && bottom==null)
           return true;
         return false;
+    }
+
+    public int getSize(){
+        return size;
     }
 
 
