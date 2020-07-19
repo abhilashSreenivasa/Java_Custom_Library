@@ -41,6 +41,17 @@ public class DoublyLinkedList {
             temp=temp.next;
         }
     }
+    public int getMax(){
+        if(head==null || tail==null)
+        return Integer.MIN_VALUE;
+        int max=Integer.MIN_VALUE;
+        Node temp=head;
+        while(temp!=null){
+            max=Math.max(temp.val,max);
+            temp=temp.next;
+        }
+        return max;
+    }
 
     public void printListReverse(){
         Node temp=tail;
@@ -49,7 +60,14 @@ public class DoublyLinkedList {
             temp=temp.prev;
         }
     }
-   
+    
+
+    public int getSize(){
+        return size;
+    }
+
+    
+
 
 
 

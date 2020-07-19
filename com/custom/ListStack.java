@@ -66,8 +66,5 @@ public class ListStack{
     public int getSize(){
         return size;
     }
-
-
-
     }
     
