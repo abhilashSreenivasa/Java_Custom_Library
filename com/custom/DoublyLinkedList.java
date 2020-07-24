@@ -53,6 +53,9 @@ public class DoublyLinkedList {
         return max;
     }
 
+    
+    
+
     public void printListReverse(){
         Node temp=tail;
         while(temp!=null){
