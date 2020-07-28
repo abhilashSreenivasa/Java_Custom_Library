@@ -68,12 +68,32 @@ public class BinarySearchTree{
     public static void printInOrder(){
         inOrder(root);
     }
+    public static void printPreOrder(){
+        preOrder(root);
+    }
+    public static void printPostOrder(){
+        postOrder(root);
+    }
     protected static void inOrder(Node node){
         if(node==null)
         return;
         inOrder(node.left);
         System.out.println(node.val);
         inOrder(node.right);
+    }
+    protected static void preOrder(Node node){
+        if(node==null)
+        return;
+        System.out.println(node.val);
+        preOrder(node.left);
+        preOrder(node.right);
+    }
+    protected static void postOrder(Node node){
+        if(node==null)
+        return;
+        postOrder(node.left);
+        postOrder(node.right);
+        System.out.println(node.val);
     }
 
     
