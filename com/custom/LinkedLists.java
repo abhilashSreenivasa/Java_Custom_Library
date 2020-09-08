@@ -90,5 +90,19 @@ public class LinkedLists {
         return head;
     }
 
+    //returns max value of the list.
+    public int maxValue(){
+        if(head==null)
+        return Math.MIN_VALUE;
+        Node temp=head;
+        int max=Math.MIN_VALUE;
+        while(temp!=null){
+           if(temp.val>max)
+           max=temp.val;
+           temp=temp.next;
+        }
+        return max;
+    }
+
 
 }
