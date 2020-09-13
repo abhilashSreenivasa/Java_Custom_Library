@@ -66,5 +66,16 @@ public class ListStack{
     public int getSize(){
         return size;
     }
+    public boolean search(int ele){
+        if(bottom==null)
+         return false;
+        Node temp=bottom;
+        while(temp!=null){
+            if(temp.val==ele)
+            return true;
+            temp=temp.next;
+        }
+        return false;
+    }
     }
     
