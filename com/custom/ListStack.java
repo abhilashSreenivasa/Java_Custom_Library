@@ -1,5 +1,5 @@
 package com.custom;
-
+import java.util.ArrayList;
 public class ListStack{
     
     public Node top;
@@ -77,5 +77,28 @@ public class ListStack{
         }
         return false;
     }
+
+    public void pushAll(ArrayList list){
+        if(list.isEmpty())
+        return;
+        for(int i=0;i<list.size();i++){
+          if(list.get(i) instanceof Integer)
+          this.push((Integer)list.get(i));
+        }
+      
     }
+    public Object getTop(){
+        if(this.isEmpty())
+        return null;
+        return top.val;
+    }
+
+    public Object getBottom(){
+        if(this.isEmpty())
+        return null;
+        return bottom.val;
+    }
+
+
+}
     
